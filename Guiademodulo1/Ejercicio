@@ -1,0 +1,26 @@
+#pide al usuario que ingrese el total de una cuenta y el porcentaje que desea dejar 
+#calcula el monto de la propina y el total a pagar 
+
+
+def calculadora_de_propina():
+
+
+
+    try:
+        cuenta_toal= float(input("Ingrese el total de la cuenta: "))
+        porcentaje_propina = float(input("Ingrese el porcentaje de propina : "))
+
+        if cuenta_toal <= 0 or porcentaje_propina < 0:
+            print("Por favor, ingrese valores positivos para la cuenta y el porcentaje.")
+            return
+
+        monto_propina = cuenta_toal * (porcentaje_propina / 100)
+        total_a_pagar = cuenta_toal + monto_propina
+
+        print(f"Monto de la propina: {monto_propina:.2f}")
+        print(f"Total a pagar: {total_a_pagar:.2f}")
+
+    except ValueError:
+        print("Por favor, ingrese un monto valido.")
+
+calculadora_de_propina()
